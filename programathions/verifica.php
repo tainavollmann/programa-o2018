@@ -14,12 +14,12 @@
 		$_SESSION['login'] = "admin";
 		
 
-		header("Location:index.php");
+		header("Location:index2.php");
 
 
 	}else{
 		echo "Dados inválidos";
 		
-		header("Location:index.php?erro=1");
+		header("Location:index2.php?erro=1");
 
 	}

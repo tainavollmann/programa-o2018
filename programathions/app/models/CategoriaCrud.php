@@ -46,6 +46,36 @@ class CategoriaCrud{
         return $listaCategorias;
     }
 
+    public function insertCategoria(Categoria $cat){
 
+        $sql = "INSERT INTO categoria (nome_categoria, descricao_categoria) VALUES ('".$cat->getNome()."','".$cat->getDescricao()."')";
 
+        try{
+            $this->conexao->exec($sql);
+        }catch (PDOException $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function upadateCategoria(Categoria $cat){
+        // MONTA O TEXTO
+        $sql = "UPDATE categoria SET (nome_categoria = '".$cat->getNome()."', descricao_categoria = '".$cat->getDescricao()."') WHERE id_categoria =".$cat->getId();
+
+        try{
+            $this->conexao->exec($sql);
+        }catch (PDOException $e){ //EM CASO DE ERRO, CAPTURA E RTETORNA A MENSAGEM
+            return $e->getMessage();
+        }
+    }
+
+    public function deleteCategoria(int $id){
+
+        $sql = "DELETE FROM categoria WHERE id_categoria=5";
+
+        try{ //TENTA EXECUTAR A INSTRUÇÃO
+            $this->conexao->exec($sql);
+        }catch (PDOException $e){
+            return $e;
+        }
+    }
 }
