@@ -1,11 +1,5 @@
 <pre>
 <?php
-/**
- * Created by PhpStorm.
- * User: aluno
- * Date: 03/04/18
- * Time: 15:58
- */
 
 require_once ('../models/CategoriaCrud.php');
 
