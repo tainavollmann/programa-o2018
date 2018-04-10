@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gean</title>
+	<title>léo e Gen</title>
 </head>
 <body>
 

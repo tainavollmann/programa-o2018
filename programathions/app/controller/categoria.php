@@ -1,5 +1,11 @@
 <pre>
 <?php
+/**
+ * Created by PhpStorm.
+ * User: aluno
+ * Date: 03/04/18
+ * Time: 15:58
+ */
 
 require_once ('../models/CategoriaCrud.php');
 
@@ -15,12 +21,22 @@ switch($action){
     $crud = new CategoriaCrud();
     $categorias = $crud->getCategorias();
 
-    include('../view/template/cabecalho.php');
-    include('../view/categoria/index.php');
-    include('../view/template/rodape.php');
+    include ('../view/template/cabecalho.php');
+    include ('../view/categoria/index.php');
+    include ('../view/template/rodape.php');
 
     break;
 
+    case 'show':
+        $id = $_GET['id'];
+        $crud = new CategoriaCrud();
+        $categoria = $crud->getCategoria($id);
+
+        include ('../view/template/cabecalho.php');
+        include ('../view/categoria/show.php');
+        include ('../view/template/rodape.php');
+
+        break;
 }
 
 ?>

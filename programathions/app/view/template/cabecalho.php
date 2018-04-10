@@ -1,15 +1,14 @@
-<link rel="stylesheet" href="style.css">
-<style>
-    .header{
-        display: block;
-        background-color: #007bff;
-        width: 100%;
-        color: white;
-        text-align: center;
-    }
+<html>
+<head>
 
-</style>
+    <title>Lista de Categorias</title>
+    <link rel="stylesheet" >
 
-<div class="header">
-    <h1>Lista de Categorias</h1>
-</div>
+
+
+</head>
+
+<h1>Lista de Categorias</h1>
+
+
+<body>
