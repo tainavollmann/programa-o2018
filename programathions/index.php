@@ -1,11 +1,23 @@
 <?php session_start(); ?>
 
-<!DOCTYPE html>
 <html>
 <head>
-	<title>léo e Gen</title>
+
+    <title>Lista de Categorias</title>
+    <link rel="stylesheet" href="app/view/template/style.css">
+
 </head>
 <body>
+<div class="cabecalho">
+
+    <ul>
+        <li><a href="index.php">Início</a></li>
+        <li><a href="app/controller/categoria.php"> Categorias </a></li>
+        <li><a href="app/controller/produto.php"> Produtos </a></li>
+
+    </ul>
+</div>
+
 
 <ul>
 	<li><a href="produtos.php?categoria=1">Esportes</a></li>
@@ -24,7 +36,7 @@
 <?php
 	if (!isset($_SESSION['nome'])) {
 ?>
-	
+
 
 <form method="post" action="verifica.php">
 	<input type="text" name="usuario" placeholder="Usuário">
@@ -41,6 +53,5 @@
 
 <?php
 	}
+	require_once ('app/view/template/rodape.php');
 ?>
-</body>
-</html>
