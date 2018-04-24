@@ -12,7 +12,6 @@
             <li><a href="../../index.php">Início</a></li>
             <li><a href="../../controller/categoria.php"> Categorias </a></li>
             <li><a href="../../controller/produto.php"> Produtos </a></li>
-
         </ul>
 </div>
 

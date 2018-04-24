@@ -1,3 +1,7 @@
+<a href="produto.php?action=inserir">Incluir nova acategoria</a>
+<br>
+<br>
+
 <table>
             <?php foreach($produtos as $produto): ?>
     <tr>

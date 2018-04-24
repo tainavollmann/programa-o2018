@@ -1,4 +1,6 @@
-
+<a href="categoria.php?action=inserir">Incluir nova acategoria</a>
+<br>
+<br>
         <table>
             <?php foreach($categorias as $categoria): ?>
                 <tr>

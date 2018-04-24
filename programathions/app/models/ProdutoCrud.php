@@ -49,4 +49,37 @@ class ProdutoCrud{
         return $listaProdutos;
     }
 
+    public function insertProduto(Produto $prod){
+
+        $sql = "INSERT INTO produto (nome_produto, descricao_produto, foto_produto, preco_produto) VALUES ('".$prod->getNome()."','".$prod->getDescricao()."', '".$prod->getFoto()."',''".$prod->getPreco()."')";
+
+        try{
+            $this->conexao->exec($sql);
+        }catch (PDOException $e){
+            return $e->getMessage();
+        }
+    }
+
+    public function updateProduto(Produto $prod){
+        // MONTA O TEXTO
+        $sql = "UPDATE produto SET nome_produto = '".$prod->getNome()."', descricao_produto = '".$prod->getDescricao()."', preco_produto = '".$prod->getPreco()."' WHERE id_produto =".$prod->getId();
+
+        try{
+            return $this->conexao->exec($sql);
+        }catch (PDOException $e){ //EM CASO DE ERRO, CAPTURA E RETORNA A MENSAGEM
+            return $e->getMessage();
+        }
+    }
+
+    public function deleteProduto(int $id){
+
+        $sql = "DELETE FROM produto WHERE id_produto=".$id;
+
+        try{ //TENTA EXECUTAR A INSTRUÇÃO
+            $this->conexao->exec($sql);
+        }catch (PDOException $e){
+            return $e;
+        }
+    }
+
 }

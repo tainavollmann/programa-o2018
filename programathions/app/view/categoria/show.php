@@ -1,7 +1,7 @@
 <div class="submenu">
 
-    <a href="">Editar Categoria</a>
-    <a href="">Excuir Categoria</a>
+    <a href="categoria.php?action=alterar&id=<?= $categoria->getId() ?>">Editar Categoria</a>
+    <a href="categoria.php?action=excluir&id=<?= $categoria->getId() ?>">Excuir Categoria</a>
 
 </div>
 

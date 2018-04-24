@@ -1,7 +1,7 @@
 <div class="submenu">
 
-    <a href="">Editar Produto</a>
-    <a href="">Excuir Produto</a>
+    <a href="produto.php?action=alterar&id<?= $produto->getId() ?>">Editar Produto</a>
+    <a href="produto.php?action=excluir&id=<?= $produto->getId() ?>">Excuir Produto</a>
 
 </div>
 

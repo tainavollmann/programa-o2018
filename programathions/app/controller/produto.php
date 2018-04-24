@@ -31,6 +31,48 @@ switch($action){
         include ('../view/template/rodape.php');
 
         break;
+
+
+    case 'inserir':
+
+        if (!isset($_POST['gravar'])) {
+            include('../view/template/cabecalho.php');
+            include('../view/produtos/inserir.php');
+            include('../view/template/rodape.php');
+        }else{
+            $prod = new Produto(null, $_POST['nome'], $_POST['descricao'], $_POST['preco']);
+            $crud = new ProdutoCrud();
+            $crud->insertProduto($prod);
+            header('Location: produto.php');
+        }
+        break;
+
+    case 'alterar':
+        if (!isset($_POST['gravar'])) {
+            $id = $_GET['id'];
+            $crud = new ProdutoCrud();
+            $produto = $crud->getProduto($id);
+
+            include('../view/template/cabecalho.php');
+            include('../view/produtos/alterar.php');
+            include('../view/template/rodape.php');
+        }else{
+
+            $prod = new Produto($_POST['id'], $_POST['nome'], $_POST['descricao'], $_POST['preco'], null, null);
+            $crud = new ProdutoCrud();
+            $res = $crud->updateProduto($prod);
+
+            header('Location: produto.php');
+        }
+        break;
+
+    case 'excluir':
+
+        $crud = new ProdutoCrud();
+        $crud->deleteProduto($_GET['id']);
+        header('Location: produto.php');
+
+        break;
 }
 
 ?>

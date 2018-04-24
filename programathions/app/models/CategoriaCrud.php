@@ -57,12 +57,12 @@ class CategoriaCrud{
         }
     }
 
-    public function upadateCategoria(Categoria $cat){
+    public function updateCategoria(Categoria $cat){
         // MONTA O TEXTO
-        $sql = "UPDATE categoria SET (nome_categoria = '".$cat->getNome()."', descricao_categoria = '".$cat->getDescricao()."') WHERE id_categoria =".$cat->getId();
+        $sql = "UPDATE categoria SET nome_categoria = '".$cat->getNome()."', descricao_categoria = '".$cat->getDescricao()."' WHERE id_categoria =".$cat->getId();
 
         try{
-            $this->conexao->exec($sql);
+            return $this->conexao->exec($sql);
         }catch (PDOException $e){ //EM CASO DE ERRO, CAPTURA E RTETORNA A MENSAGEM
             return $e->getMessage();
         }
@@ -70,7 +70,7 @@ class CategoriaCrud{
 
     public function deleteCategoria(int $id){
 
-        $sql = "DELETE FROM categoria WHERE id_categoria=5";
+        $sql = "DELETE FROM categoria WHERE id_categoria=".$id;
 
         try{ //TENTA EXECUTAR A INSTRUÇÃO
             $this->conexao->exec($sql);
